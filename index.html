@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Netflix Layout</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="nficon2016.ico" > 
+</head>
+<body>
+  <nav class="zone  header">
+    <ul class="main-nav">
+      <li><a href="#" id="logo"><img src="Netflix.png" class="netflix"></a></li>
+      <li><a href="#" id="home">Home</a></li>
+      <li><a href="">TV Shows</a></li>
+      <li><a href="">Movies</a></li>
+      <li><a href="">Games</a></li>
+      <li><a href="">New & Popular</a></li>
+       <li><a href="">My List</a></li>
+        <li><a href="">Browse by Languages</a></li>
+     <li class="search-button">
+  <form action="/search" method="get">
+    <div class="test">
+    <label for="site-search" class="search">🔍︎</label>
+    <input type="search" id="site-search" class="site-search" name="q" placeholder="Titles, people, genres">
+    </div>
+  </form>
+</li>
+    </ul>
+
+    
+  </nav>
+  
+  <div class="cover">
+  <div class="cover-content">
+    <div class="series"><img src="tocrop.png" class="nseries"></div>
+    <div class="text">
+    <div class="title"><span>DARK</span></div>
+    <div class="caption"><span>A family saga with a supernatural twist, set in a German town where the disappearance of two young children exposes the relationships among four families.</span></div>
+    </div>
+    <div class="buttons">
+      <button class="play">▶ Play</button>
+      <button class="info">ⓘ More Info</button>
+    </div>
+  </div>
+</div>
+
+<div class="full-grid">
+<div class="row-container" id="row1">
+  <label class="labels">Popular</label>
+  <button class="arrow left">◀</button>
+  <div class="zone grid-wrapper"></div>
+  <button class="arrow right">▶</button>
+</div>
+
+<div class="row-container" id="row2">
+  <label class="labels">Action</label>
+  <button class="arrow left">◀</button>
+  <div class="zone grid-wrapper"></div>
+  <button class="arrow right">▶</button>
+</div>
+
+<div class="row-container" id="row3">
+  <label class="labels">Comedy</label>
+  <button class="arrow left">◀</button>
+  <div class="zone grid-wrapper"></div>
+  <button class="arrow right">▶</button>
+</div>
+
+<div class="row-container" id="row4">
+  <label class="labels">Horror</label>
+  <button class="arrow left">◀</button>
+  <div class="zone grid-wrapper"></div>
+  <button class="arrow right">▶</button>
+</div>
+
+  </div>
+
+
+  <div class="zone footer">Footer</div>
+  
+   <script src="script.js"></script>
+</body>
+</html>

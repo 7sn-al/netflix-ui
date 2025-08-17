@@ -1,0 +1,119 @@
+.zone {
+    color:#FFF;
+    font-size:2em;
+    transition: all 0.3s linear;
+}
+
+.zone:hover {
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+body {
+    margin:0;
+}
+
+.main-nav {
+    list-style:none;
+    display:flex;
+    margin:0;
+    font-size: 0.7em;
+}
+
+.header{
+    position: fixed;
+    top:0%;
+    width:100%;
+    z-index:1000;
+}
+
+li {
+    font-family: sans-serif;
+    padding:20px;
+    transition: transform 0.4s ease;
+}
+
+li:hover{
+    transform:scale(1.1)
+}
+
+.push {
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-nav {
+        font-size: 0.5em;
+        padding: 0;
+    }
+}
+
+a {
+    color: #f5f5f6;
+    text-decoration: none;
+}
+
+.cover{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+    width:30rem;
+}
+
+.grid-wrapper{
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+    grid-gap:20px;
+    z-index: -1;
+    border-bottom: solid #444 0.2px;
+}
+
+.box{
+    background-color: rgba(68, 68, 68,0.9);
+    padding:130px;
+    margin:20px;
+    cursor:pointer;
+}
+
+.box > img{
+    width:100%
+}
+
+.box:hover{
+    transform:scale(1.05);
+}
+/*https://paulund.co.uk/how-to-create-shiny-css-buttons*/
+/***********************************************************************
+ *  Green Background
+ **********************************************************************/
+.green{
+    background: linear-gradient(top, #56B870 0%,#a5c956 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Red Background
+ **********************************************************************/
+.red{
+    background: linear-gradient(top, #C655BE 0%,#cf0404 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Yellow Background
+ **********************************************************************/
+.yellow{
+    display:flex;
+    background: white;
+    color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+/***********************************************************************
+ *  Blue Background
+ **********************************************************************/
+.blue{
+    background:  #7abcff
+}
