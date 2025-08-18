@@ -1,3 +1,46 @@
+const genres = {
+  action: 28,
+  adventure: 12,
+  animation: 16,
+  comedy: 35,
+  crime: 80,
+  documentary: 99,
+  drama: 18,
+  family: 10751,
+  fantasy: 14,
+  history: 36,
+  horror: 27,
+  music: 10402,
+  mystery: 9648,
+  romance: 10749,
+  scienceFiction: 878,
+  tvMovie: 10770,
+  thriller: 53,
+  war: 10752,
+  western: 37
+};
+
+const tvGenres = {
+  actionAdventure: 10759,
+  animation: 16,
+  comedy: 35,
+  crime: 80,
+  documentary: 99,
+  drama: 18,
+  family: 10751,
+  kids: 10762,
+  mystery: 9648,
+  news: 10763,
+  reality: 10764,
+  sciFiFantasy: 10765,
+  soap: 10766,
+  talk: 10767,
+  warPolitics: 10768,
+  western: 37
+};
+
+
+
 window.addEventListener('DOMContentLoaded', () => {
 const header = document.querySelector('.header');
   window.addEventListener('scroll', function(){
@@ -18,10 +61,23 @@ const header = document.querySelector('.header');
      }
   });
 
-  const APILINK = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=61a8d5b0281dfd932f4e3a6339f7e6be&page=1';
+  const MOVIELINK = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=61a8d5b0281dfd932f4e3a6339f7e6be&page=1';
   const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
   const SEARCHAPI = 'https://api.themoviedb.org/3/search/movie?api_key=61a8d5b0281dfd932f4e3a6339f7e6be&query=';
+  const TVLINK = 'https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&api_key=61a8d5b0281dfd932f4e3a6339f7e6be&page=1';
+ 
+  const GENRELINK = function(genre){
+    return `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&with_genres=${genres[genre]}&api_key=61a8d5b0281dfd932f4e3a6339f7e6be&page=1`;
+  }
 
+  const TVGENRELINK = function(genre){
+  return `https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&with_genres=${tvGenres[genre]}&api_key=61a8d5b0281dfd932f4e3a6339f7e6be&page=1`;
+}
+
+showMovies(TVGENRELINK("actionAdventure"), "#row6 .grid-wrapper");
+
+  
+     
   const main=document.querySelector('.grid-wrapper');
 
   function showMovies(url, selector) {
@@ -64,10 +120,17 @@ rows.forEach(row => {
   });
 });
 
-showMovies(APILINK, '#row1 .grid-wrapper'); 
-showMovies(SEARCHAPI + 'action', '#row2 .grid-wrapper');
-showMovies(SEARCHAPI + 'comedy', '#row3 .grid-wrapper');
-showMovies(SEARCHAPI + 'horror', '#row4 .grid-wrapper');
+showMovies(MOVIELINK, '#row1 .grid-wrapper'); 
+showMovies(GENRELINK('action'), '#row2 .grid-wrapper');
+showMovies(GENRELINK('comedy') ,'#row3 .grid-wrapper');
+showMovies(GENRELINK('horror'), '#row4 .grid-wrapper');
+
+showMovies(TVLINK, '#row5 .grid-wrapper'); 
+showMovies(TVGENRELINK('actionAdventure'), '#row6 .grid-wrapper');
+showMovies(TVGENRELINK('comedy') ,'#row7 .grid-wrapper');
+showMovies(TVGENRELINK('animation'), '#row8 .grid-wrapper');
 
 
 });
+
+
