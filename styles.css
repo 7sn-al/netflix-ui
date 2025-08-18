@@ -195,6 +195,36 @@ li:hover {
     padding-left: 20px;
 }
 
+.movies{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position:absolute;
+    top:-35px;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: white;
+    margin-left: 20px;
+    font-size: 2em;
+    border-bottom: 1px solid white;
+}
+
+.series{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position:absolute;
+    top:-35px;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: white;
+    margin-left: 20px;
+    font-size: 2em;
+    border-bottom: 1px solid white;
+    
+}
+
+#row5{
+    margin-top: 30px;
+}
+
+
 .box {
     flex: 0 0 auto; 
     width: 200px;
@@ -267,10 +297,64 @@ li:hover {
 
 .footer {
     display:flex;
-    background: white;
-    color: black;
+    flex-direction: column;
+    background: #1a1a1a;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.socials{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
     align-items: center;
     justify-content: center;
+}
+
+i:hover{
+    cursor: pointer;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.link1{
+    display: flex;
+    flex-direction: row;
+    gap:100px;
+    list-style: none;
+    font-size: 0.6em;
+    color: #666666;
+}
+
+.link2{
+    display: flex;
+    flex-direction: row;
+    gap:100px;
+    list-style: none;
+    font-size: 0.6em;
+    color: #666666;
+}
+
+.link3{
+    display: flex;
+    flex-direction: row;
+    gap:100px;
+    list-style: none;
+    font-size: 0.6em;
+    color: #666666;
+}
+
+.li-other:hover{
+        border-bottom: 1px solid #666666;
+        cursor: pointer;
+        transform: scale(1);
 }
 
 
