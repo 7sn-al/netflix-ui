@@ -1,109 +1,271 @@
 .zone {
     color:#FFF;
-    font-size:2em;
+    font-size:1em;
     transition: all 0.3s linear;
-}
-
-.zone:hover {
-    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
 }
 
 body {
     margin:0;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent;
+    transition: background-color .4s ease;
 }
 
 .main-nav {
-    list-style:none;
-    display:flex;
-    margin:0;
-    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    gap: 20px;
+    flex-wrap:nowrap;
+    box-shadow: inset 0px 40px 20px -20px rgba(0,0,0,0.7);
 }
 
-.header{
-    position: fixed;
-    top:0%;
-    width:100%;
-    z-index:1000;
-}
-
-li {
-    font-family: sans-serif;
-    padding:20px;
-    transition: transform 0.4s ease;
-}
-
-li:hover{
-    transform:scale(1.1)
-}
-
-.push {
-    margin-left: auto;
-}
-
-@media only screen and (max-width: 600px) {
-    .main-nav {
-        font-size: 0.5em;
-        padding: 0;
-    }
-}
 
 a {
     color: #f5f5f6;
     text-decoration: none;
+    margin: 0;
 }
 
-.cover{
-    height: 70vh;
+.main-nav > li:last-child {
+    margin-left: auto;
+}
+
+.header.scrolled {
+    background: rgba(0, 0, 0);
+}
+
+li {
+    font-family: sans-serif;
+    transition: transform 0.4s ease;
+}
+
+li:hover {
+    transform:scale(1.1);
+}
+
+.search-button {
+    margin-left: auto;    
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-.image{
-    width:30rem;
+.test {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.grid-wrapper{
-    display:grid;
-    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
-    grid-gap:20px;
-    z-index: -1;
-    border-bottom: solid #444 0.2px;
+.search {
+    display: flex;
+    font-size:1.2em;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
-.box{
-    background-color: rgba(68, 68, 68,0.9);
-    padding:130px;
-    margin:20px;
-    cursor:pointer;
+.site-search {
+    width: 0px;        
+    opacity: 0;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 1em;
+    background: rgba(0, 0, 0, 0.9);
+    color: rgb(83, 83, 83);
+    border-radius: 4px;
+    transition: width 0.4s ease, opacity 0.3s ease;
+    padding:10px 20px
 }
 
-.box > img{
-    width:100%
+.site-search.active {
+    width: 200px;  
+    opacity: 1;
+    margin-left: 10px;
+    color: white;
+    margin: 5px;
 }
 
-.box:hover{
+.cover {
+    display: flex;
+    justify-content: flex-start;   
+    align-items: center;        
+    height: 80vh;
+    position: relative;
+    background: url("dark2.jpg") center center / cover no-repeat;
+    padding: 5vh 30px;        
+}
+
+.cover-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    max-width: 60vw;
+    color: white;
+}
+
+
+.cover-content .series img {
+    width: 8vw;
+    min-width: 80px;
+}
+
+.cover-content .title {
+    font-size: clamp(2rem, 6vw, 4em);
+    letter-spacing: 0.5em;
+    font-weight: bold;
+    font-family: PetitaLIght;
+    font-style: bold;
+}
+
+.cover-content .caption {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 60ch;
+}
+
+.cover-content .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 2vh;
+}
+
+.play {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.08em;
+}
+
+.info {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.20em;
+    color: white;
+    background-color: rgba(90, 90, 90, 0.6);
+}
+
+.info:hover {
+    background-color: rgba(90, 90, 90, 0.3);
+}
+
+.play:hover {
+    background-color: rgb(167, 167, 167);
+}
+
+
+.grid-wrapper {
+    display: flex;
+    flex-direction: row;       
+    overflow-x: auto;
+    gap: 10px; 
+    padding: 20px;
+    scroll-behavior: smooth;
+    background-color: #1a1a1a;
+    height:100%;
+}
+
+#row1{
+     box-shadow: 0px -100px 70px 60px  #1a1a1a;
+}
+
+.full-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #1a1a1a;
+}
+
+.labels{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position:absolute;
+    top:0;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: white;
+    padding-left: 20px;
+}
+
+.box {
+    flex: 0 0 auto; 
+    width: 200px;
+    height: 300px;
+    background-color: rgba(68, 68, 68, 0.9);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+}
+
+.box > img {
+    width:100%;
+    border-radius: 5px; width: 100%;
+    height: 100%;         
+    object-fit: cover;  
+    border-radius: 5px;
+}
+
+.arrow{
+    display:none;
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20%;
+    transition: background 0.3s;
+}
+
+.row-container:hover .arrow{
+    display: flex;
+}
+
+.arrow:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.arrow.left {
+    left: 0;
+}
+
+.arrow.right {
+    right: 0;
+}
+
+.row-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.grid-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.box:hover {
     transform:scale(1.05);
 }
-/*https://paulund.co.uk/how-to-create-shiny-css-buttons*/
-/***********************************************************************
- *  Green Background
- **********************************************************************/
-.green{
-    background: linear-gradient(top, #56B870 0%,#a5c956 100%); /* W3C */
+
+.netflix {
+    max-width:150px;
+    min-width:100px;
 }
 
-/***********************************************************************
- *  Red Background
- **********************************************************************/
-.red{
-    background: linear-gradient(top, #C655BE 0%,#cf0404 100%); /* W3C */
-}
 
-/***********************************************************************
- *  Yellow Background
- **********************************************************************/
-.yellow{
+.footer {
     display:flex;
     background: white;
     color: black;
@@ -111,9 +273,4 @@ a {
     justify-content: center;
 }
 
-/***********************************************************************
- *  Blue Background
- **********************************************************************/
-.blue{
-    background:  #7abcff
-}
+
