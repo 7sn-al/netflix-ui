@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Netflix Layout</title>
+  <title>Netflix UI</title>
   <link rel="stylesheet" type="text/css" href="./styles.css">
-  <link rel="shortcut icon" type="image/x-icon" href="nficon2016.ico" > 
+  <link rel="shortcut icon" type="image/x-icon" href="nficon2016.ico" >
+  <script src="https://kit.fontawesome.com/235569064f.js" crossorigin="anonymous"></script> 
 </head>
 <body>
   <nav class="zone  header">
@@ -45,6 +46,7 @@
 
 <div class="full-grid">
 <div class="row-container" id="row1">
+  <label class="movies">Movies</label>
   <label class="labels">Popular</label>
   <button class="arrow left">◀</button>
   <div class="zone grid-wrapper"></div>
@@ -72,10 +74,70 @@
   <button class="arrow right">▶</button>
 </div>
 
+<div class="row-container" id="row5">
+  <label class="series">Series</label>
+  <label class="labels">Popular</label>
+  <button class="arrow left">◀</button>
+  <div class="zone grid-wrapper"></div>
+  <button class="arrow right">▶</button>
+</div>
+
+<div class="row-container" id="row6">
+  <label class="labels">Action</label>
+  <button class="arrow left">◀</button>
+  <div class="zone grid-wrapper"></div>
+  <button class="arrow right">▶</button>
+</div>
+
+<div class="row-container" id="row7">
+  <label class="labels">Comedy</label>
+  <button class="arrow left">◀</button>
+  <div class="zone grid-wrapper"></div>
+  <button class="arrow right">▶</button>
+</div>
+
+<div class="row-container" id="row8">
+  <label class="labels">Animation</label>
+  <button class="arrow left">◀</button>
+  <div class="zone grid-wrapper"></div>
+  <button class="arrow right">▶</button>
+</div>
+
   </div>
 
 
-  <div class="zone footer">Footer</div>
+  <div class="zone footer">
+    <div class="socials">
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-brands fa-youtube"></i>
+    </div>
+
+    <div class="links">
+      <ul class="link1">
+        <li class="li-other">Audio Description</li>
+        <li class="li-other">Help Center</li>
+        <li class="li-other">Gift Cards</li>
+        <li class="li-other">Media center</li>
+         </ul>
+
+        <ul class="link2">
+        <li class="li-other">Investor Relations</li>
+        <li class="li-other">Jobs</li>
+        <li class="li-other">Terms of Use</li>
+        <li class="li-other">Privacy</li>
+     </ul>
+
+     <ul class="link3">
+      <li class="li-other">Legal Notices</li>
+      <li class="li-other">Cookie Preferences</li>
+      <li class="li-other">Corporate Infromation</li>
+      <li class="li-other">Contact Us</li>
+     </ul>
+
+    </div>
+  </div>
   
    <script src="script.js"></script>
 </body>
