@@ -113,7 +113,7 @@ li:hover {
 }
 
 
-.cover-content .series img {
+.cover-content .series1 img{
     width: 8vw;
     min-width: 80px;
 }
@@ -356,5 +356,6 @@ i:hover{
         cursor: pointer;
         transform: scale(1);
 }
+
 
 
